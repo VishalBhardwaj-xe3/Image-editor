@@ -28,4 +28,4 @@ Since this project is built with plain HTML, CSS, and JS, there is no complex bu
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/yourusername/modern-image-editor.git](https://github.com/yourusername/modern-image-editor.git)
+   git clone [https://github.com/VishalBhardwaj-xe3/modern-image-editor.git](https://github.com/VishalBhardwaj-xe3/modern-image-editor.git)
