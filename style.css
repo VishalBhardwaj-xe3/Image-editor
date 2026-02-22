@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100vh; /* Ensures the app fills the whole screen */
+}
+
+html {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--bg-primary-colors);
+    color: var(--text-primary-colors);
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+main section {
+    width: 100%;
+    height: 100%;
+    padding: var(--padding-2xl);
+    display: flex;
+    gap: var(--gutter-lg);
+}
+
+.btn {
+    padding: var(--padding-sm) var(--padding-lg);
+    border: none;
+    outline: none;
+    border-radius: var(--border-radius-md);
+    background-color: var(--bg-active-colors);
+    cursor: pointer;
+    color: var(--text-active-colors);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+}
+
+/* Modern hover states for buttons */
+.btn:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px -1px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+#reset-btn {
+    background-color: var(--bg-danger-colors);
+    color: var(--text-primary-colors);
+}
+
+#download-btn {
+    background-color: var(--bg-success-colors);
+    color: var(--text-primary-colors);
+}
+
+main section .left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gutter-lg);
+    width: 70%;
+    height: 100%;
+}
+
+main section .right {
+    width: 30%;
+    height: 100%;
+    background-color: var(--bg-secondary-colors);
+    padding: var(--padding-lg);
+    border-radius: var(--border-radius-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--gutter-lg);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3); /* Gives the side panel elevation */
+    overflow-y: auto;
+}
+
+main section .right .filters {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gutter-md);
+}
+
+main section .top {
+    display: flex;
+    align-items: center;
+    gap: var(--gutter-md);
+    width: 100%;
+}
+
+main section .bottom {
+    background-color: var(--bg-secondary-colors);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%; /* Adapts to fill the remaining space beautifully */
+    padding: var(--padding-2xl);
+    border-radius: var(--border-radius-xl);
+    box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    border: 2px dashed #334155; /* Makes it look like an upload dropzone */
+}
+
+main section .bottom .placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.6;
+    gap: var(--gutter-md);
+    transition: opacity 0.3s ease;
+}
+
+main section .bottom:hover .placeholder {
+    opacity: 0.9;
+}
+
+main section .bottom .placeholder i {
+    font-size: 8rem; /* Scaled slightly so it fits all screen sizes perfectly */
+    color: var(--text-secondary-colors);
+}
+
+main section .bottom .placeholder p {
+    font-size: var(--font-size-lg);
+    color: var(--text-secondary-colors);
+    font-weight: 500;
+}
+
+main section .right .filter {
+    width: 100%;
+}
+
+main section .right .filter input {
+    width: 100%;
+    outline: none;
+    margin-top: var(--margin-sm);
+    appearance: none;
+    background: transparent;
+}
+
+main section .right .filter input::-webkit-slider-runnable-track {
+    background-color: #334155;
+    height: 6px; /* A bit thicker for modern aesthetics */
+    border-radius: 3px;
+}
+
+main section .right .filter input::-webkit-slider-thumb {
+    cursor: pointer;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--bg-active-colors); /* Blue instead of red */
+    margin-top: -7px;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5); /* Nice glowing effect */
+    transition: transform 0.2s ease;
+}
+
+main section .right .filter input::-webkit-slider-thumb:hover {
+    transform: scale(1.2); /* Thumb enlarges when grabbed */
+}
+
+canvas {
+    max-width: 100%;
+    max-height: 100%; /* Keeps the image perfectly contained in the left workspace */
+    display: none;
+    object-fit: contain;
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5); /* Drops a shadow behind the edited image */
+}
+
+.presets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gutter-sm);
+}
